@@ -1,0 +1,107 @@
+#btn-row {
+    direction: ltr;
+    margin-top: 3vw;
+}
+
+#BtnGroup {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    padding-right: 250px;
+}
+
+#dropdown {
+    background-color: #256589;
+    font-size: 22px;
+    white-space: nowrap;
+}
+
+#dropdown:focus {
+    transition: 0.8s;
+    background-color: black;
+}
+
+#Disabled {
+    background-color: transparent;
+    color: black;
+    border: none;
+}
+
+#buttonClick {
+    transition: 0.4s;
+    background-color: #256589;
+    border-radius: 5px;
+    border: 2px solid #256589;
+    color: white;
+    font-size: 20px;
+    box-shadow: none;
+    margin-left: 3px;
+}
+
+#buttons:focus {
+    box-shadow: none;
+}
+
+#buttons:hover {
+    border: 1px solid darkblue;
+    color: darkblue;
+    transition: 0.2s;
+}
+
+#buttons {
+    border: 2px solid #256589;
+    border-radius: 5px;
+    color: steelblue;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+#dropItem {
+    transition: 1s;
+}
+
+#dropItem:active {
+    outline: none;
+}
+
+#dropItem:hover {
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#dropMenu {
+    background-color: #256589;
+    text-align: center;
+}
+
+#Arrow {
+    font-size: 30px;
+    margin-bottom: 4px;
+}
+
+@media only screen and (max-width: 945px) {
+    #Arrow {
+        transform: rotate(180deg);
+    }
+}
+
+@media only screen and (max-width: 945px) {
+    #BtnGroup {
+        display: flex;
+        margin-bottom: 10px;
+
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    #btn-row {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+
+    }
+}

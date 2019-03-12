@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+}
+.modalWindow{
+    margin-top:3vh;
+    position: fixed;
+}
+.Window{
+    position: relative;
+}
+
+.mainSection{
+    z-index: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.InfoMenu{
+    position: absolute;
+}
+
+.GoogleLogin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.userInfoMenu .closeOnCross {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    font-size: 24px;
+}
+
+.tableBlock {
+    display: flex;
+    flex-direction: column;
+    margin-top:12vh;
+   width: 100vw;
+}
+
+
+@media only screen and (max-width: 1130px) {
+
+    .headerMenu {
+        height: 12vh;
+    }
+
+    .tableBlock{
+        margin-top:12vh;
+        margin-left:6px;
+    }
+
+}
+@media only screen and (max-width: 600px) {
+    .headerMenu {
+        height: 16vh;
+    }
+    .Window {
+        border-width: 5px;
+        border-style: solid;
+        border-image: linear-gradient(to bottom, #256589, rgba(0, 0, 0, 0)) 1 100%;
+    }
+    .modalWindow{
+        margin-top:4.3vh;
+        position: fixed;
+    }
+}

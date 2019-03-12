@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+}
+
+
+.redactForm {
+    background-color: azure;
+    width: 70vw;
+    height: 45vw;
+    border: #256589 solid 5px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.doubleSection {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.checkBoxSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aloneSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttonsSection {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}
+
+.buttonsSection button {
+    height: 34px;
+    width: 100px;
+    border: none;
+    background-color: #256589;
+    color: white;
+    cursor: pointer;
+}
+
+.buttonsSection button:hover {
+    background-color: #3082b0;
+}
+
+.hAlign {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #40445A;
+}
+
+.buttonsSection {
+    display: flex;
+    justify-content: space-around;
+}
+
+.inputItem {
+    height: 45px;
+    width: 250px;
+    margin-top: 20px;
+    border: 3px solid #3082b0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.inputItem:focus {
+    outline: none;
+}
+
+.modalWindow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #256589;
+    cursor: pointer;
+}
+
+
+.inputButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media only screen and (max-width: 960px) {
+    .redactForm {
+        width: 95vw;
+        height: 60vh;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+
+    .redactForm {
+        align-self: flex-end;
+        width: 95vw;
+        height: 82vh;
+    }
+
+    .doubleSection {
+        flex-direction: column;
+        justify-content: normal;
+        align-items: center;
+    }
+
+    .inputItem {
+        height: 5vh;
+        font-size: 14px;
+    }
+
+    .hAlign {
+        height: 1.3vh;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,78 @@
+.DiagramList{
+    margin-top: 125px;
+    background-color: white;
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.schedule {
+   width: 500px;
+    height: 500px;
+}
+.diagramText {
+    color: #454d55;
+    text-align: center;
+    font-size: 24px;
+    display: block;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.labels {
+    align-self: center;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    justify-content: flex-start;
+    width: 400px;
+    height: 500px;
+}
+.labelBlock{
+    display: flex;
+}
+
+.value{
+    text-align: center;
+   color: white;
+   width: 60px;
+}
+
+#Dropdown-Menu{
+    margin-left:20px;
+}
+
+#MenuBlock{
+    border: none;
+    background-color: white;
+    color:  steelblue;
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+#MenuBlock:focus{
+    box-shadow: none;
+    margin-top: 5px;
+    transition: 0.4s;
+    border: 5px black!important;
+    outline:none!important;
+}
+@media screen and (max-width: 500px) {
+    .schedule{
+       width: 280px;
+        height:280px;
+    }
+    .labels,
+    .diagramText{
+        font-size: 8vw;
+        width: 100%;
+    }
+}

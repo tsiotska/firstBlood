@@ -1,0 +1,138 @@
+.headerMenu{
+    height: 10vh;
+    background-color: #256589;
+    color: white;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+}
+.list{
+    display:flex;
+    width: 100%;
+}
+
+.first{
+    text-align: center;
+    padding: 0;
+    display:flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.second{
+    text-align: center;
+    padding: 0;
+    display:flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.nav-item{
+    display: flex;
+    align-items: center;
+}
+
+.nav-two{
+    margin-left: auto;
+}
+.nav-three{
+    margin-right: 10px;
+}
+.userMenu{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    cursor: pointer;
+}
+.userIcon {
+    width: 26px;
+    border-radius: 100%;
+    border: 2px white solid;
+}
+
+#menu{
+    background-color: #256589;
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 40px;
+}
+
+#dropdownItem
+{
+    height: 100%;
+    color: white;
+    transition: 0.4s;
+}
+.currentPage{
+    color: white;
+    transition: 0.4s;
+    font-size:24px;
+}
+
+#dropdownItem:focus{
+    border: none;
+    outline: none;
+}
+#hamburger{
+    transition: 1s;
+    transform: rotate(135deg);
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+#roll{
+    color: black;
+    background-color: transparent;
+    transition: 0.6s;
+    transform:  rotate(-280deg);
+    box-shadow: none;
+    border: none;
+}
+
+#dropDown{
+    background-color: transparent;
+}
+
+.logOut{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+#dropdownItem:hover,
+.currentPage:hover,
+.userMenu:hover,
+.logOut:hover{
+    color: black;
+    background-color: #256589;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .tableBlock{
+        margin-top:110px;
+        margin-left:6px;
+    }
+    .logOut{
+        font-size: 15px;
+    }
+    .userMenu{
+        font-size: 15px;
+    }
+    .currentPage{
+        font-size: 14px;
+        font-weight: lighter;
+    }
+}
+@media only screen and (max-width: 600px) {
+
+    .nav-three {
+        margin-right: 0;
+    }
+}
+
+
+
