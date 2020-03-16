@@ -4,6 +4,10 @@ import './Buttons.css'
 import {FaArrowCircleDown} from 'react-icons/fa';
 import {connect} from 'react-redux';
 import {setAmount, renderTable} from '../../../../../redux/TableState/tableActions';
+import Button from '@material-ui/core/Button';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import Fade from '@material-ui/core/Fade';
 
 const mapStateToProps = state => ({
     counters: state.tableReducer.counters,
@@ -19,7 +23,9 @@ class DropMenu extends React.Component {
         super(props);
         this.toggle = this.toggle.bind(this);
         this.state = {
-            dropdownOpen: false
+            dropdownOpen: false,
+                anchorEl: null,
+
         };
     }
 
@@ -31,14 +37,44 @@ class DropMenu extends React.Component {
         this.props.activateChangeAmount(val);
         this.props.updateTable(true);
     };
+    handleClick = event => {
+        this.setState({ anchorEl: event.currentTarget });
+    };
 
+    handleClose = () => {
+        this.setState({ anchorEl: null });
+    };
     render() {
         const {currentAmount} = this.props;
+        const { anchorEl } = this.state;
+        const open = Boolean(anchorEl);
         return (
 
-            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-                <DropdownToggle id="dropdown">
-                    <span id="Amount">  <FaArrowCircleDown id="Arrow"/> {currentAmount}</span>
+        /*    <div>
+                <Button
+                    variant="popover"
+                    aria-owns={open ? 'fade-menu' : undefined}
+                    aria-haspopup="true"
+                    onClick={this.handleClick}
+                >
+                    Open with fade transition
+                </Button>
+                <Menu
+                    id="fade-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={this.handleClose}
+                    TransitionComponent={Fade}
+                >
+                    <MenuItem onClick={this.handleClose}>Profile</MenuItem>
+                    <MenuItem onClick={this.handleClose}>My account</MenuItem>
+                    <MenuItem onClick={this.handleClose}>Logout</MenuItem>
+                </Menu>
+            </div>*/
+
+   <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                <DropdownToggle id={this.state.dropdownOpen ? "dropdownFocus" : "dropdown"}>
+                    <span id={this.state.dropdownOpen ? "AmountFocus" :"Amount"}>  <FaArrowCircleDown id="Arrow"/> {currentAmount}</span>
                 </DropdownToggle>
 
                 <DropdownMenu id="dropMenu">
@@ -52,6 +88,8 @@ class DropMenu extends React.Component {
                     )}
                 </DropdownMenu>
             </Dropdown>
+
+
         );
     }
 }

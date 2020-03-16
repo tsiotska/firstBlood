@@ -110,7 +110,7 @@ class FirstDiagram extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="DiagramItem">
                 <div className="diagramText">Групування по регіонах</div>
                 <div className="wrapper">
                     <div className="schedule">

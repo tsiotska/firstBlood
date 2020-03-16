@@ -3,7 +3,7 @@ import React from 'react'
 class Foot extends React.Component{
     render(){
         return(
-            <div className="text-center">All rights reserved. NUWM</div>
+            <div className="text-center DiagramItem">All rights reserved. NUWM</div>
         )
     }
 }

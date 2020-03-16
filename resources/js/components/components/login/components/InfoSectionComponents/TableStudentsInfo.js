@@ -3,7 +3,7 @@ import App from './TableComponents/App'
 
 function TableStudentsInfo() {
     return (
-        <App />
+        <App/>
     )
 }
 

@@ -14,35 +14,41 @@ const mainReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isPopupBtnClicked: !state.isPopupBtnClicked
-            }
+            };
         case types.OPEN_USER_MENU:
             return {
                 ...state,
                 isUserMenuOpened: !state.isUserMenuOpened
-            }
+            };
         case types.CHANGE_INFO_SECTION:
-            console.log('INFOSECTION!', action.id)
             return {
                 ...state,
-                currentInfoSection: action.id
+                currentInfoSection: action.id,
+                isPopupBtnClicked: !state.isPopupBtnClicked
 
             };
 
         case types.SIGN_IN:
-            const {profileObj} = action.response;
+         //   const {profileObj} = action.response;
             return {
                 ...state,
-                isSignedIn: !state.isSignedIn,
-                userInfo: profileObj
-            }
-        case types.LOGIN_FAILURE:
-            console.log("Login Error")
-            console.log(action.error)
-            return state;
+                isSignedIn: !state.isSignedIn
+              //  userInfo: profileObj
+            };
+
+      /*  case types.LOGIN_FAILURE:
+            console.log("Login Error");
+            console.log(action.error);
+            return state;*/
+
         case types.LOG_OUT:
             return {
-                isSignedIn: !state.isSignedIn
-            }
+                isSignedIn: !state.isSignedIn,
+                isPopupBtnClicked: false,
+                isUserMenuOpened: false,
+                currentInfoSection: "Реєстрація",
+                userInfo: {}
+            };
         default:
             return state;
     }

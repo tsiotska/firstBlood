@@ -5,7 +5,7 @@ import TableBody from './myTable.js';
 import DropMenu from './DropMenu.js';
 import Buttons from './Buttons.js';
 //import axios from "axios";
-import './App.css'
+import './Table.css'
 import './Buttons.css'
 import {fetchData} from "../../../../../redux/TableState/tableActions"
 import {connect} from "react-redux"
@@ -34,6 +34,7 @@ componentDidMount() {
 }
     render() {
        return (
+           <div className="wrapperTable">
             <div className="tableBlock">
                 <TableBody/>
                 <Container fluid>
@@ -46,6 +47,7 @@ componentDidMount() {
                         </Col>
                     </Row>
                 </Container>
+                </div>
             </div>
         );
     }

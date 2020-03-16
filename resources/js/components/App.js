@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Route, Switch, withRouter} from "react-router-dom";
-import Login from  "./components/login";
+import Login from "./components/login/MainPage";
 
 class App extends Component {
 
@@ -10,7 +10,7 @@ class App extends Component {
                 <main>
                     <Switch>
                         <Route path="/" component={Login}/>
-                        {/*<Route path="/Login" component={Auth}/>*/}
+
                     </Switch>
                 </main>
             </div>

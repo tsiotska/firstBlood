@@ -18,7 +18,10 @@ export const types = {
     SORT_DATA: "SORT_DATA",
     TWICE_CLICK_SORT_DATA: "IF_TWICE_SORT_DATA",
     OPEN_MODAL: "OPEN_MODAL",
-    CHANGE_CURRENT_ID: "CHANGE_CURRENT_ID"
+    SET_REMOVE:"SET_REMOVE",
+    CHANGE_CURRENT_ID: "CHANGE_CURRENT_ID",
+
+   // LOG_OUT: "LOG_OUT"
 };
 //export const setFalseRender =() => ({type: types.RENDER_TABLE});
 export const renderTable =(flag) => ({type: types.RENDER_TABLE, flag:flag});
@@ -38,4 +41,5 @@ export const sortClickData = (temp, kind) =>({type: types.SORT_DATA, temp: temp,
 export const twiceClickData =(temp) => ({type: types.TWICE_CLICK_SORT_DATA, temp: temp});//Якщо сортуємо за тим самим параметром
 export const fetchData=(persons) =>({type: types.FETCH_AXIOS, persons:persons});
 export const toggleModal=() =>({type:types.OPEN_MODAL});
+export const changeRemove=(left, top)=>({type: types.SET_REMOVE, left: left, top: top})
 export const changeCurrentId = (id) => ({type: types.CHANGE_CURRENT_ID, id: id});

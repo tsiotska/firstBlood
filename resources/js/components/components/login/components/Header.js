@@ -1,124 +1,47 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Dropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap'
-import {FaAddressBook, FaTable, FaChartBar, FaLocationArrow} from 'react-icons/fa';
 import './header.css';
 import './userInfo.css';
+import {Link} from "react-router-dom";
 import {changeSection} from '../../../redux/actions';
+
 
 class Header extends React.Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            dropdownOpen: false
-        };
-    }
-
-    toggle = () => {
-        this.setState(prevState => ({
-            dropdownOpen: !prevState.dropdownOpen
-        }));
-    };
-
-    onClickChange = (id) => {
-        this.props.changeInfoSection(id);
+    hoverHamburger=()=>{
+document.getElementById('iosMenu').color = "red"
     };
 
     render() {
-
         return (
-            <nav className="navbar navbar-expand-lg navbar-expand-md  navbar-expand-sm headerMenu fixed-top">
-
-                <div className={"list"}>
-
-                    <ul className="first">
-
-                        <li className="nav-item nav-one ">
-
-                            <Dropdown id="dropDown" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-
-                                <DropdownToggle id={this.state.dropdownOpen ? "roll" : "hamburger"}>
-                                    <FaLocationArrow size={40}/>
-                                </DropdownToggle>
-
-                                <DropdownMenu id="menu">
-                                    <DropdownItem id="dropdownItem"
-                                                  onClick={() => {
-                                                      this.onClickChange("Реєстрація")
-                                                  }}>
-                                        <FaAddressBook className="icon" size={46}/></DropdownItem>
-
-                                    <DropdownItem divider/>
-
-                                    <DropdownItem id="dropdownItem"
-                                                  onClick={() => {
-                                                      this.onClickChange("Списки студентів")
-                                                  }}>
-                                        <FaTable className="icon" size={46}/></DropdownItem>
-
-                                    <DropdownItem divider/>
-
-                                    <DropdownItem id="dropdownItem"
-                                                  onClick={() => {
-                                                      this.onClickChange("Статистика")
-                                                  }}>
-                                        <FaChartBar className="icon" size={46}/></DropdownItem>
-
-                                </DropdownMenu>
-                            </Dropdown>
-                        </li>
-
-                        <li className="nav-item nav-two">
-                            <div className="currentPage">{this.props.currentInfoSection}</div>
-                        </li>
-                    </ul>
+            <nav className="navbar-expand-lg navbar-expand-md  navbar-expand-sm headerMenu">
 
 
-                    <ul className="second">
+                    <ul className={"list"}>
 
-                        <li className="nav-item nav-three">
-                            <div className={"userMenu"} onClick={this.props.onClickUserIcon}>
 
-                                <Dropdown isOpen={this.props.isUserMenuOpened} >
-                                    <DropdownToggle id="UserImg">
-                                        <img alt={"User Icon"}
-                                             className={"userIcon"}
-                                             src={this.props.userInfo.imageUrl}/>
+                            <li className="nav-item ">
+                                <i className="fas fa-globe" id={this.props.isPopupBtnClicked ? "roll" : "hamburger"}
+                                     onClick={this.props.openPopupMenu}/>
+                            </li>
 
-                                        <div>{this.props.userInfo.name}</div>
-                                    </DropdownToggle>
-
-                                    <DropdownMenu id="userInfo">
-                                        <DropdownItem id="userBlock">
-                                            <div className={"absBlock"}>
-                                                    <div className={"userInfoSection"}>
-                                                        <span>E-mail: {this.props.profileObj.email}</span>
-                                                        <span>Name: {this.props.profileObj.name}</span>
-                                                    </div>
-                                            </div>
-                                        </DropdownItem>
-                                    </DropdownMenu>
-                                </Dropdown>
+                            <li className="nav-item">
+                                <div className="currentPage">{this.props.currentInfoSection}</div>
+                            </li>
 
 
 
-                            </div>
-                        </li>
+                            <li className="nav-item">
 
-                        <li className="nav-item nav-four">
+                                <Link to={"/"} className={"logOut"} onClick={this.props.logOut}>
+                                    <div><i className={"fas fa-door-open"}/></div>
 
-                            <div className={"logOut"} onClick={this.props.logOut}>
-                                <div><i className={"fas fa-sign-out-alt fa-2x"}/></div>
+                                    <div>Log Out</div>
 
-                                <div>Log Out</div>
+                                </Link>
+                            </li>
 
-                            </div>
-                        </li>
-                    </ul>
-
-                </div>
+                        </ul>
             </nav>
         )
     }
@@ -129,8 +52,11 @@ const mapStateToProps = (state) => ({
     isUserMenuOpened: state.mainReducer.isUserMenuOpened,
     userInfo: state.mainReducer.userInfo,
     currentInfoSection: state.mainReducer.currentInfoSection,
-    profileObj: state.mainReducer.userInfo
+    profileObj: state.mainReducer.userInfo,
+
+    isPopupBtnClicked: state.mainReducer.isPopupBtnClicked
 });
+
 
 const mapDispatchToProps = (dispatch) => ({
     openPopupMenu: () => {

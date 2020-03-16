@@ -1,137 +1,120 @@
-.headerMenu{
-    height: 10vh;
-    background-color: #256589;
+
+.headerMenu {
+    width: 100vw;
+    background-color: #0d5b85;
     color: white;
-    font-family: Arial;
+    font-family: Roboto;
     font-size: 16px;
     font-weight: bold;
-}
-.list{
-    display:flex;
-    width: 100%;
-}
-
-.first{
-    text-align: center;
-    padding: 0;
-    display:flex;
-    justify-content: flex-start;
-    width: 100%;
+    display: flex;
+    position: fixed;
+    z-index: 2;
 }
 
-.second{
-    text-align: center;
-    padding: 0;
-    display:flex;
-    justify-content: flex-end;
+.list {
     width: 100%;
-}
-.nav-item{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding-right: 5vw;
+    padding-left:2vw;
 }
 
-.nav-two{
-    margin-left: auto;
-}
-.nav-three{
-    margin-right: 10px;
-}
-.userMenu{
+.nav-item {
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
     align-items: center;
-    cursor: pointer;
-}
-.userIcon {
-    width: 26px;
-    border-radius: 100%;
-    border: 2px white solid;
+    text-decoration: none;
 }
 
-#menu{
-    background-color: #256589;
+
+#menu {
+    background-color: #0d5b85;
     text-align: center;
     margin-top: 25px;
     margin-left: 40px;
 }
 
-#dropdownItem
-{
-    height: 100%;
-    color: white;
-    transition: 0.4s;
-}
-.currentPage{
-    color: white;
-    transition: 0.4s;
-    font-size:24px;
-}
 
-#dropdownItem:focus{
-    border: none;
-    outline: none;
-}
 #hamburger{
     transition: 1s;
-    transform: rotate(135deg);
     background-color: transparent;
     box-shadow: none;
     border: none;
+    font-size:42px;
 }
+
 
 #roll{
-    color: black;
-    background-color: transparent;
-    transition: 0.6s;
-    transform:  rotate(-280deg);
+    background: radial-gradient(ellipse at top, #2181b5, #408bb3),
+    radial-gradient(ellipse at bottom, transparent, #065078);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size:42px;
+    transition: 0.5s;
+    transform:  rotate(+360deg);
     box-shadow: none;
-    border: none;
 }
 
-#dropDown{
+#roll:hover,#hamburger:hover{
+    cursor: pointer;
+}
+
+.currentPage {
+    color: white;
+    font-size: 22px;
+}
+
+#dropDown {
     background-color: transparent;
 }
+.fa-door-open{
+    font-size:20px;
+}
 
-.logOut{
+.logOut {
+    margin-top: 5px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+.currentPage:hover{
+    cursor: text;
 }
 
-#dropdownItem:hover,
-.currentPage:hover,
 .userMenu:hover,
-.logOut:hover{
-    color: black;
-    background-color: #256589;
+.logOut:hover,
+#iosMenu:hover,
+#hamburger:hover{
+    color: #d9d9d9;
+    background-color: #0d5b85;
     cursor: pointer;
-    transition: 0.4s;
+    text-decoration: none;
 }
 
-@media only screen and (max-width: 1000px) {
 
-    .tableBlock{
-        margin-top:110px;
-        margin-left:6px;
-    }
-    .logOut{
-        font-size: 15px;
-    }
-    .userMenu{
-        font-size: 15px;
-    }
-    .currentPage{
+@media only screen and (max-width: 800px) {
+
+
+    .logOut {
         font-size: 14px;
         font-weight: lighter;
     }
+
+    .userMenu {
+        font-size: 14px;
+    }
+
+    .currentPage {
+        font-size: 18px;
+        font-weight: lighter;
+    }
 }
+
 @media only screen and (max-width: 600px) {
 
-    .nav-three {
-        margin-right: 0;
-    }
 }
 
 

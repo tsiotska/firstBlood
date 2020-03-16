@@ -31,29 +31,28 @@ const tableReducer = (state = initialState, action) => {
                     current: action.i,
                     startCount: 2,
                     maxCount: 6
-                }}
-            else if (action.i >= state.last - 2 && state.last-5>=2) { //Єслі номер кнопки десь біля останньої
+                }
+            } else if (action.i >= state.last - 2 && state.last - 5 >= 2) { //Єслі номер кнопки десь біля останньої
 
                 return {
                     ...state,
                     current: action.i,
                     startCount: state.last - 5,
                     maxCount: state.last - 1
-                }}
-            else if(action.i >=state.last-2 && state.last-5 < 2){
-                return{
+                }
+            } else if (action.i >= state.last - 2 && state.last - 5 < 2) {
+                return {
                     ...state,
                     current: action.i,
                     startCount: 2,
                     maxCount: state.last - 1
                 }
-            }
-
-            else
+            } else
                 return state;
 
         case types.CHANGE_MOVER:
-            return{...state,
+            return {
+                ...state,
                 mover: action.number * state.currentAmount
             };
 
@@ -61,7 +60,7 @@ const tableReducer = (state = initialState, action) => {
 
             return {
                 ...state,
-                last: Math.ceil(action.i /state.currentAmount)
+                last: Math.ceil(action.i / state.currentAmount)
             };
 
 
@@ -75,11 +74,11 @@ const tableReducer = (state = initialState, action) => {
                 maxCount: 6
             };
         //_________________________________________________________HEADER
-      /*  case types.CHANGE_SORT:
-            return{
-               ...state,
-                pushedSort: ! state.pushedSort
-            }; */
+        /*  case types.CHANGE_SORT:
+              return{
+                 ...state,
+                  pushedSort: ! state.pushedSort
+              }; */
         case types.SORT_DID_MOUNT:
             return {
                 ...state,
@@ -88,14 +87,14 @@ const tableReducer = (state = initialState, action) => {
                 checking: action.kind
             };
         case types.SORT_DATA:
-            return{
+            return {
                 ...state,
                 info: action.temp,
                 checking: action.kind,
                 direction: state.direction * -1
             };
         case types.TWICE_CLICK_SORT_DATA:
-            return{
+            return {
                 ...state,
                 info: action.temp,
                 direction: state.direction * -1
@@ -106,10 +105,18 @@ const tableReducer = (state = initialState, action) => {
                 info: action.persons,
 
             };
-        case types.OPEN_MODAL:
+        case types.SET_REMOVE:
             return{
                 ...state,
-                isModalOpen: !state.isModalOpen
+                left: action.left,
+                top: action.top
+            }
+        case types.OPEN_MODAL:
+            return {
+                ...state,
+                isModalOpen: !state.isModalOpen,
+                left: "50vw",
+                top: "50vh"
             };
         case types.CHANGE_CURRENT_ID:
             return {
@@ -117,10 +124,11 @@ const tableReducer = (state = initialState, action) => {
                 currentStudentId: action.id
             };
         case types.RENDER_TABLE:
-            return{
+            return {
                 ...state,
                 rerenderTable: action.flag
             };
+
 
         default:
             return state;

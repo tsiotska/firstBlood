@@ -24,7 +24,7 @@ class FirstDiagram extends React.Component {
         this.toggle = this.toggle.bind(this);
     }
     componentDidMount() {
-        axios.get('/students')
+        axios.get('/students/')
             .then(r => r.data)
             .then(r => {
                 this.setState({persons: r})
@@ -167,7 +167,7 @@ class FirstDiagram extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="DiagramItem">
 
                 <div className="diagramText"> Діаграма перегляду розподілу<br/> професії по регіонах</div>
                 <div className="wrapper">
@@ -175,7 +175,7 @@ class FirstDiagram extends React.Component {
 
                     <div id="Dropdown-Menu">
                         <Dropdown  isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-                            <DropdownToggle id="MenuBlock" caret>
+                            <DropdownToggle id={this.state.dropdownOpen ? "MenuBlockFocus" : "MenuBlock"} caret>
                                 {this.state.profession[this.state.currentProfession]}
                             </DropdownToggle>
                             <DropdownMenu id="dropMenu">

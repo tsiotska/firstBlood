@@ -45,7 +45,7 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'host' => 'nestest.mysql.tools',
-            'port' => '',
+            'port' => '5432',
             'database' => 'nestest_noo' ,
             'username' => 'nestest_noo',
             'password' => 'scgnvxfz',

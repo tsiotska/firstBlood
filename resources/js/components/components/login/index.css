@@ -1,70 +1,93 @@
-body {
+html {
+    height: 100%;
     margin: 0;
-}
-.modalWindow{
-    margin-top:3vh;
-    position: fixed;
-}
-.Window{
-    position: relative;
+    font-family: "Microsoft YaHei UI";
 }
 
-.mainSection{
-    z-index: 0;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+.Window {
+    background-color: #e8ecef;
+    position: relative;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.WindowBlurred {
+    position: relative;
+    background: rgba(000, 0, 0, 0.5);
     height: 100%;
 }
-.InfoMenu{
-    position: absolute;
+
+.WindowBlurred > *:not(.WindowWrapper) {
+    filter: blur(1.2px);
 }
 
-.GoogleLogin {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.Page {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
 }
 
-.userInfoMenu .closeOnCross {
-    position: absolute;
-    top: 10px;
-    right: 18px;
-    font-size: 24px;
+.hiddenModal {
+    display: none;
 }
 
-.tableBlock {
+.hideSideBar {
+    margin-left: -8vw;
+    transition: 0.5s;
     display: flex;
     flex-direction: column;
-    margin-top:12vh;
-   width: 100vw;
+    position: relative;
+    z-index: 1000;
 }
 
-
-@media only screen and (max-width: 1130px) {
-
-    .headerMenu {
-        height: 12vh;
-    }
-
-    .tableBlock{
-        margin-top:12vh;
-        margin-left:6px;
-    }
-
+.SideBar {
+    margin-left: 0vw;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1000;
 }
-@media only screen and (max-width: 600px) {
-    .headerMenu {
-        height: 16vh;
+
+.mainSection {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    background-color: #e8ecef;
+    height: 100%;
+    width: 100vw;
+}
+
+.currentSection {
+    height: 100%;
+    display: flex;
+    width: 100vw;
+}
+
+.WindowWrapper {
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 3;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .SideBar {
+        flex-direction: row;
+        width: 100%;
+        height: 150px;
     }
-    .Window {
-        border-width: 5px;
-        border-style: solid;
-        border-image: linear-gradient(to bottom, #256589, rgba(0, 0, 0, 0)) 1 100%;
+
+    .Page {
+        flex-direction: column;
+        height: auto;
     }
-    .modalWindow{
-        margin-top:4.3vh;
-        position: fixed;
+
+    .currentSection {
+        height: auto;
+        overflow-y: auto;
     }
 }

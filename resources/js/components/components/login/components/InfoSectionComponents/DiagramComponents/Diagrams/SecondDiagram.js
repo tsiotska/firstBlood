@@ -18,7 +18,7 @@ class SecondDiagram extends React.Component {
         };
     }
     componentDidMount() {
-        axios.get('/students')
+        axios.get('/students/')
             .then(r => r.data)
             .then(r => {
                 this.setState({persons: r})
@@ -109,7 +109,7 @@ class SecondDiagram extends React.Component {
     };
     render() {
         return (
-            <div>
+            <div className="DiagramItem">
                 <div className="diagramText">Діаграма розподілу професій</div>
 
 

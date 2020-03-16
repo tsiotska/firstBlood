@@ -17,5 +17,8 @@ export const initialState = {
     pushedSort: false,
     isModalOpen: false,
     currentStudentId: null,
-    rerenderTable: false
+    rerenderTable: false,
+
+    left: "50vw",
+    top: "50vh"
 };

@@ -1,6 +1,12 @@
-.DiagramList{
-    margin-top: 125px;
-    background-color: white;
+.DiagramList {
+    width: 100%;
+    margin-top: 12vh;
+    background-color: #e8ecef;
+}
+
+.DiagramItem {
+    width: 100%;
+    background-color: #e8ecef;
 }
 
 .wrapper {
@@ -13,13 +19,14 @@
 }
 
 .schedule {
-   width: 500px;
+    width: 500px;
     height: 500px;
 }
+
 .diagramText {
     color: #454d55;
     text-align: center;
-    font-size: 24px;
+    font-size: 22px;
     display: block;
     font-weight: bold;
     margin-top: 30px;
@@ -27,7 +34,7 @@
 
 .labels {
     align-self: center;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     display: flex;
     flex-direction: column;
@@ -36,43 +43,71 @@
     width: 400px;
     height: 500px;
 }
-.labelBlock{
+
+.labelBlock {
     display: flex;
 }
 
-.value{
+.value {
     text-align: center;
-   color: white;
-   width: 60px;
+    color: white;
+    width: 60px;
 }
 
-#Dropdown-Menu{
-    margin-left:20px;
+#Dropdown-Menu {
+    margin-left: 20px;
 }
 
-#MenuBlock{
-    border: none;
+#MenuBlock {
+    border: 2px solid #0d5b85;
     background-color: white;
-    color:  steelblue;
-    font-size: 20px;
+    color: #0d5b85;
+    font-size: 18px;
     font-weight: bold;
+    border-radius: 15px;
     white-space: nowrap;
+    transition: 0.3s;
 }
-#MenuBlock:focus{
+
+#MenuBlock:hover {
+    background-color: #d9d9d9;
+}
+
+#MenuBlockFocus {
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+    background-color: #0d5b85;
+    white-space: nowrap;
+    border-radius: 15px;
+    border: 2px solid #0d5b85;
     box-shadow: none;
-    margin-top: 5px;
-    transition: 0.4s;
-    border: 5px black!important;
-    outline:none!important;
 }
-@media screen and (max-width: 500px) {
-    .schedule{
-       width: 280px;
-        height:280px;
+
+
+@media screen and (max-width: 600px) {
+    .DiagramItem {
+        height: auto;
     }
+
+    .wrapper {
+        height: auto;
+    }
+
+    .labels {
+        height: fit-content;
+    }
+
+
+    .schedule {
+        width: 280px;
+        height: 280px;
+    }
+
     .labels,
-    .diagramText{
-        font-size: 8vw;
+    .diagramText {
+        font-size: 16px;
         width: 100%;
     }
 }

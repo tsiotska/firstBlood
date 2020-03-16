@@ -10,54 +10,46 @@
     padding-right: 250px;
 }
 
+#Amount {
+    color: #0d5b85;
+}
+
+#Arrow {
+    font-size: 30px;
+    margin-bottom: 4px;
+}
+
 #dropdown {
-    background-color: #256589;
+    background-color: white;
     font-size: 22px;
     white-space: nowrap;
+    border-radius: 15px;
+    border: 2px solid #0d5b85;
+    box-shadow: none;
 }
 
-#dropdown:focus {
-    transition: 0.8s;
-    background-color: black;
+#dropdown:hover {
+    background-color: #d9d9d9;
 }
 
-#Disabled {
-    background-color: transparent;
-    color: black;
-    border: none;
-}
-
-#buttonClick {
-    transition: 0.4s;
-    background-color: #256589;
-    border-radius: 5px;
-    border: 2px solid #256589;
+#dropdownFocus {
     color: white;
-    font-size: 20px;
+    transition: 0.3s;
+    background-color: #0d5b85;
+    font-size: 22px;
+    white-space: nowrap;
+    border-radius: 15px;
+    border: 2px solid #0d5b85;
     box-shadow: none;
-    margin-left: 3px;
 }
 
-#buttons:focus {
-    box-shadow: none;
-}
-
-#buttons:hover {
-    border: 1px solid darkblue;
-    color: darkblue;
-    transition: 0.2s;
-}
-
-#buttons {
-    border: 2px solid #256589;
-    border-radius: 5px;
-    color: steelblue;
-    background-color: transparent;
-    font-size: 20px;
+#AmountFocus {
+    color: white;
 }
 
 #dropItem {
-    transition: 1s;
+    font-size: 18px;
+    transition: 0.3s;
 }
 
 #dropItem:active {
@@ -67,20 +59,56 @@
 #dropItem:hover {
     background-color: transparent;
     color: white;
-    font-size: 20px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 #dropMenu {
-    background-color: #256589;
+    background-color: #0d5b85;
     text-align: center;
 }
 
-#Arrow {
-    font-size: 30px;
-    margin-bottom: 4px;
+#Disabled {
+    background-color: transparent;
+    color: black;
+    border: none;
 }
+
+#buttonClick {
+    height:55px;
+    width: 40px;
+    transition: 0.3s;
+    background-color: #0d5b85;
+    border-radius: 15px;
+    border: 2px solid #0d5b85;
+    color: white;
+    font-size: 18px;
+    box-shadow: none;
+    outline: none;
+}
+
+#buttons {
+    height:55px;
+    width: 40px;
+    transition: 0.3s;
+    border: 2px solid #0d5b85;
+    border-radius: 15px;
+    color: steelblue;
+    background-color: white;
+    font-size: 18px;
+}
+#buttons:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+#buttons:hover {
+    background-color: #d9d9d9;
+    transition: 0.3s;
+}
+
+
+
 
 @media only screen and (max-width: 945px) {
     #Arrow {
